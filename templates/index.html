@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Recognition using OpenAI Whisper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+
+<body class="bg-black text-white font-sans flex items-center justify-center min-h-screen">
+    <div class="bg-gray-900 p-8 rounded-lg shadow-lg max-w-5xl w-full">
+        <h1 class="text-3xl font-bold text-center mb-6">Speech Recognition using OpenAI Whisper</h1>
+
+        <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+            <!-- Audio Recording Section -->
+            <div class="flex flex-col items-center mb-4 md:mb-0">
+                <button id="record-btn" class="bg-white text-black px-4 py-2 rounded hover:bg-gray-300 mb-2">Start Recording</button>
+                <button id="stop-btn" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 hidden mb-2">Stop Recording</button>
+                <div id="speech-animation" class="speech-container hidden">
+                    <div class="speech-bubble"></div>
+                    <div class="speech-bubble"></div>
+                    <div class="speech-bubble"></div>
+                </div>
+                <p id="record-status" class="text-center text-sm text-gray-400 mb-4"></p>
+            </div>
+
+            <!-- File Upload Section -->
+            <div class="flex flex-col items-center mb-4 md:mb-0 md:ml-4">
+                <label for="audio-upload" class="bg-white text-black px-4 py-2 rounded hover:bg-gray-300 cursor-pointer flex items-center mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M209.66,122.34a8,8,0,0,1,0,11.32l-82.05,82a56,56,0,0,1-79.2-79.21L147.67,35.73a40,40,0,1,1,56.61,56.55L105,193A24,24,0,1,1,71,159L154.3,74.38A8,8,0,1,1,165.7,85.6L82.39,170.31a8,8,0,1,0,11.27,11.36L192.93,81A24,24,0,1,0,159,47L59.76,147.68a40,40,0,1,0,56.53,56.62l82.06-82A8,8,0,0,1,209.66,122.34Z"></path></svg>
+                    Upload Audio
+                </label>
+                <input type="file" id="audio-upload" name="audio" accept="audio/*" class="hidden">
+            </div>
+
+            <!-- Result Section -->
+            <div class="flex flex-col items-center text-gray-300 md:ml-4">
+                <h3 class="text-lg font-semibold text-center mb-2">Transcription:</h3>
+                <p id="transcription" class="mb-4 text-center"></p>
+                <h3 class="text-lg font-semibold text-center mb-2">Translation:</h3>
+                <p id="translation" class="text-center"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/app.js"></script>
+</body>
+
+</html>
