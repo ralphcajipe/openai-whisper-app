@@ -2,7 +2,6 @@
 
 Built a web app to run a state-of-the-art speech recognition model, and used it to transcribe and translate my voice; using OpenAI Whisper, Python Flask, HTML, Tailwind CSS, and JavaScript.
 
-# screenshot here
 ![Screenshot of OpenAI Whisper Web App](./screenshot.png)
 
 ## Features
