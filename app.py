@@ -5,7 +5,7 @@ import whisper
 
 app = Flask(__name__)
 
-# Load the Whisper model
+# Load the Whisper model and use nvidia cuda or cpu
 model = whisper.load_model("base", device="cuda" if torch.cuda.is_available() else "cpu")
 
 # Ensure upload folder exists
